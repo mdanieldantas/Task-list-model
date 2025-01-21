@@ -7,10 +7,12 @@ const router = require('./router');
 // instanciando o express
 app = express();
 
+// setando o view engine como ejs
 app.set("view engine", "ejs");
+// setando o caminho das views da aplicação express
 app.set("views", path.join(__dirname, "views"));
 
-// definindo a pasta public como estática
+// usando o ulrencoded para permitir que o express possa entender os dados enviados pelo formulário no body da requisição
 app.use(express.urlencoded({extended: true}));
 
 // usando o router como middleware de rotas da aplicação express 
