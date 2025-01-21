@@ -27,3 +27,28 @@ app.listen(PORT, () => {
 });
 
 //Analise detalhadamente o seguinte trecho de código,  Apresente o trecho de código a ser analisado de forma clara e formatada. O que significa cada parte do código
+
+/*
+
+1. **Definição da Função `index`**:
+   ```javascript
+   index: (req, res) => {
+   ```
+   - **`index`**: Nome da função.
+   - **`(req, res)`**: Parâmetros da função, onde `req` representa o objeto de requisição e `res` representa o objeto de resposta.
+
+2. **Obtendo Listas de Tarefas**:
+   ```javascript
+   const taskLists = taskLists.getAllTaskLists();
+   ```
+   - **`const taskLists`**: Declaração de uma constante chamada `taskLists`.
+   - **`taskLists.getAllTaskLists()`**: Chamada de um método `getAllTaskLists` no objeto `taskLists`, que provavelmente retorna todas as listas de tarefas.
+
+3. **Renderizando a Resposta**:
+   ```javascript
+   res.render("taskLists", {taskListModel});
+   ```
+   - **`res.render`**: Método usado para renderizar uma visualização.
+   - **`"taskLists"`**: Nome da visualização a ser renderizada.
+   - **`{taskListModel}`**: Objeto passado para a visualização, que provavelmente contém dados necessários para renderizar a página.
+*/
