@@ -14,7 +14,14 @@ create: (req, res) => {
 },
 
 // POST /app/nova-lista  -----que vai salvar a nova lista no banco de dados
-
+save: (req, res) => {
+    // pegar dados do formulario
+    const {title} = req.body;
+    const newList = taskListModel.createTaskList(title);
+    taskListModel.saveList(newList);
+    res.redirect("/app");
+    
+},
 
 // GET /app/:id --------que vai ser a rota para selecionar uma lista especifica
 
