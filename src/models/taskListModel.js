@@ -12,6 +12,10 @@ let taskLists = [
     getAllTaskLists: (req, res) => {
       return taskLists;
     },
+
+    getTaskListById: (id) => {
+      return taskLists.find(list=> list.id === id);
+    },
   
     createTaskList: (title) => {
       const newList = {
@@ -24,4 +28,5 @@ let taskLists = [
       if (taskList.title === "") throw new Error("O titulo nao pode ser vazio");
       taskLists.push(taskList);
     },
+    addTask: ()
   };
