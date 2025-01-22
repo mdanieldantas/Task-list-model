@@ -14,6 +14,12 @@ router.get("/app/nova-lista", taskLisListController.create);
 // rota para salvar uma nova lista de tarefas
 router.post("/app/nova-lista", taskLisListController.save);
 
+// rota para selecionar uma lista de tarefas pelo id
+router.get("/app/:id", taskLisListController.show);
+
+
+
+
 
 
 module.exports = router;
