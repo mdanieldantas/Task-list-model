@@ -28,5 +28,12 @@ let taskLists = [
       if (taskList.title === "") throw new Error("O titulo nao pode ser vazio");
       taskLists.push(taskList);
     },
-    addTask: ()
+    addTask: (listId, taskTitle) => {
+      const newTask ={
+        id: Math.floor(Math.random() * 999999999).toString(),
+        title: taskTitle,
+        completed: false,
+      }
+      this.getTaskListById(listId).push(newTask);
+    },
   };

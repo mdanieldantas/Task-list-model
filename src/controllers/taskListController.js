@@ -39,6 +39,11 @@ show: (req, res) => {
 addTask: (req, res) => {
     const {id} = req.params;
     const {title} = req.body;
+    
+    taskListModel.addTask(id, title);
+
+    res.redirect(`/app/${id}`);
+
 },
 
 // POST /app/:listId/completar/:taskId -----que vai marcar uma tarefa como completa
