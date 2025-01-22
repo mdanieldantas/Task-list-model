@@ -24,13 +24,22 @@ save: (req, res) => {
 },
 
 // GET /app/:id --------que vai ser a rota para selecionar uma lista especifica
-
+show: (req, res) => {
+    const {id} = req.params;
+    if(!id) throw new Error("Lista de tarefas não encontrada");
+    const taskList = taskListModel.getTaskListById(id);
+    res.render("show", {taskList});
+ 
+},
 
 // POST /app/:id/excluir -----que vai excluir uma lista especifica
 
 
 // POST /app/:id/nova-tarefa -----que vai adicionar uma nova tarefa a uma lista especifica
-
+addTask: (req, res) => {
+    const {id} = req.params;
+    const {title} = req.body;
+},
 
 // POST /app/:listId/completar/:taskId -----que vai marcar uma tarefa como completa
 
@@ -89,5 +98,5 @@ module.exports = {
 ### Resumo
 Este trecho de código define um módulo que exporta uma função `index`. Quando a rota principal da aplicação (`GET /app`) é acessada, a função `index` é chamada. Ela obtém todas as listas de tarefas usando o método `getAllTaskLists` do modelo `taskListModel` e renderiza uma visualização chamada `"app"`, passando as listas de tarefas para a visualização.
 
-Se precisar de mais detalhes ou tiver outras perguntas, estou aqui para ajudar!
+
 */
