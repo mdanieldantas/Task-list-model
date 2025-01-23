@@ -33,7 +33,11 @@ show: (req, res) => {
 },
 
 // POST /app/:id/excluir -----que vai excluir uma lista especifica
-
+delete: (req, res) => {
+    const { id } = req.params
+    taskListModel.deleteList(id)
+    res.redirect('/app')
+  },
 
 // POST /app/:id/nova-tarefa -----que vai adicionar uma nova tarefa a uma lista especifica
 addTask: (req, res) => {
@@ -47,9 +51,20 @@ addTask: (req, res) => {
 },
 
 // POST /app/:listId/completar/:taskId -----que vai marcar uma tarefa como completa
+completeTask: (req, res) => {
+const {listId, taskId} = req.params;
+taskListModel.completeTask(listId, taskId);
 
-};
+res.redirect(`/app/${listId}`);
+},
+undoTask: (req, res) => {
+    const {listId, taskId} = req.params;
+    taskListModel.undoTask(listId, taskId);
+    
+    res.redirect(`/app/${listId}`);
+    },
 
+}
 /*
 
 
