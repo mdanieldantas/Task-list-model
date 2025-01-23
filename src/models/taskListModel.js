@@ -21,6 +21,7 @@ let taskLists = [
       const newList = {
         id: Math.floor(Math.random() * 999999999).toString(),
         title: title,
+        tasks: []
       };
       return newList;
     },
@@ -34,6 +35,6 @@ let taskLists = [
         title: taskTitle,
         completed: false,
       }
-      this.getTaskListById(listId).push(newTask);
+      taskLists.find(list=> list.id === listId).tasks.push(newTask);
     },
   };
